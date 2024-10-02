@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Developer Portfolio</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Developer Portfolio</h1>
+    <ul>
+        {% for portfolio in portfolios %}
+            <li>
+                <a href="{{ portfolio.link }}">{{ portfolio.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('add_portfolio') }}">Add new portfolio</a></p>
+    <p><a href="{{ url_for('clear_portfolios') }}">Clear</a></p>
+</body>
+</html>
